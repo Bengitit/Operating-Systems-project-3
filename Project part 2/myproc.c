@@ -10,8 +10,8 @@
 #define MAX_LEN 4096
 
 MODULE_LICENSE("GPL");
-MODULE_AUTHOR("Your Name");
-MODULE_DESCRIPTION("Proc File System Read/Write Example");
+MODULE_AUTHOR("Abass");
+MODULE_DESCRIPTION("CSE 3502 Project 3 - Part 2 (Proc File System Read/Write Example)");
 
 static struct proc_dir_entry *proc_entry;
 static char *info;
