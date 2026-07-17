@@ -1,4 +1,4 @@
-# Code Logic and Changes
+# Code Logic and Changes Report
 
 After observing the original code, I needed to make some changes to code to be able to perform the required functions as intended. There where some structures that needed no change, while some aspects of it worked as intended.
 <p>
@@ -23,3 +23,6 @@ The second function that was altered was the "write_proc()". It was changed to e
 In the "init_module()" function, I implemented the missing initialization code. Memory is allocated for the buffer using "vmalloc(MAX_LEN)". If the allocation fails, the function returns "-ENOMEM". The allocated memory is initialized to zero using "memset()". The proc file is then created using "proc_create()", which registers the file "/proc/myproc" and associates it with the read and write functions. If the proc entry cannot be created, the allocated memory is released using "vfree()" before returning an error.
 <p>
 Finally, I completed the "cleanup_module()" function. When the module is unloaded, "remove_proc_entry()" removes the proc file from the "/proc" directory, and "vfree()" releases the dynamically allocated memory. This ensures that no kernel memory is leaked after the module is removed.
+<p>
+I've attached screenshots of myself running the code as well as the files created after I ran the "make" command.
+<p>
