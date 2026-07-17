@@ -11,8 +11,8 @@
 #include <linux/slab.h>
 
 #include <asm/io.h>
-#include <linux/io.h>     // <-- add this
-#include <linux/string.h> // for memcpy
+#include <linux/io.h>     
+#include <linux/string.h>
 
 static struct proc_dir_entry *tempdir, *tempinfo;
 static unsigned char *buffer;
