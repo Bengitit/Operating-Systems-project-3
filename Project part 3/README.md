@@ -23,7 +23,7 @@ This was made as it allowed the permission value "0666" to both read and write a
 The remaining functions were already implemented. The "allocate_memory()" function allocates one page of kernel memory using "kmalloc()" and marks that page as reserved so it can safely be mapped into user space. The "clear_memory()" function reverses this process by clearing the reserved flag and freeing the allocated memory with "kfree()".
 <p>
 Finally, the "init_myproc_module()" function creates the "/proc/mydir" directory and the "/proc/mydir/myinfo" file before allocating the kernel memory. When the module is unloaded, the "exit_myproc_module()" function frees the allocated memory and removes both proc entries, ensuring that all resources are properly cleaned up.
-<p>
+
 # Project-4-3-2.c Code Logic and Changes
 The first changes were made to the "main()", giving it less attributes, simplifying it. After opening the proc file, I changed the success to "printf("open successfully by Abass\n");". I was little concerned about it having it only print my name. I was reasrching and reviwing my notes to try to make it display the user's name. After a while I decided to just alter the line as that was a easier to implement.
 <p>
