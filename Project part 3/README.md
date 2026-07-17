@@ -1,14 +1,6 @@
 # Code Logic and Changes Logic
 # Project-4-3-1.c Code Logic and Changes
-The first change I made to the code was the following:
-<p>
-"#include <asm/io.h>"
-<p>
-"#include <linux/io.h>"
-<p>
-"#include <linux/string.h>"
-<p>
-These headers provide the functions needed to work with physical memory addresses and to use "memcpy()" for copying data into the kernel buffer.
+The first change I made to the code was the following headers: "#include <asm/io.h>", "#include <linux/io.h>", and "#include <linux/string.h>" as they provided the functions needed to work with physical memory addresses and to use "memcpy()" for copying data into the kernel buffer.
 Next, I updated the proc file operations "struct file_operations" to "static const struct proc_ops" as well as changed the function pointer from ".mmap" to ".proc_mmap". This change was made because newer Linux kernel versions use the "proc_ops" structure for proc file operations instead of "file_operations". I was not getting the results I needed with them. 
 <p>
 The hardest change was completing the "my_map()" function. First, I copied the contents of the predefined array into the allocated kernel buffer using "memcpy(buffer, array, sizeof(array));" to esnure that it stores the values from "array" in the memory that will later be shared with user space. Next, I converted the kernel virtual address of the buffer into a physical page frame number using "pfn = virt_to_phys(buffer) >> PAGE_SHIFT;"
